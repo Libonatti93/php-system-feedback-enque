@@ -1,0 +1,11 @@
+Feedback and polling system in PHP.
+How it works:
+The user can choose between sending feedback or answering a poll.
+The question and answer are stored in the database.
+PHP processes the data, inserts it into the corresponding table and returns a success or error message.
+
+Displaying feedback and poll results.
+Creating new polls.
+Filtering to separate feedback and polls.
+Counting poll responses.
+

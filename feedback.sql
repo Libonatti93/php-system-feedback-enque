@@ -1,0 +1,19 @@
+CREATE TABLE feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    feedback TEXT NOT NULL,
+    data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE enquetes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pergunta VARCHAR(255) NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE respostas_enquete (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    enquete_id INT,
+    resposta TEXT NOT NULL,
+    data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (enquete_id) REFERENCES enquetes(id)
+);

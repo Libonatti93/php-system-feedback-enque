@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Feedback e Enquetes</title>
+</head>
+<body>
+    <h2>Enviar Feedback</h2>
+    <form action="seu_arquivo.php" method="POST">
+        <input type="hidden" name="tipo" value="feedback">
+        <textarea name="feedback" rows="4" placeholder="Digite seu feedback" required></textarea><br><br>
+        <button type="submit">Enviar Feedback</button>
+    </form>
+
+    <h2>Criar Nova Enquete</h2>
+    <form action="seu_arquivo.php" method="POST">
+        <input type="hidden" name="tipo" value="enquete">
+        <input type="text" name="pergunta" placeholder="Digite a pergunta da enquete" required><br><br>
+        <button type="submit">Criar Enquete</button>
+    </form>
+
+    <h2>Responda as Enquetes</h2>
+    <?php
+    // Exibe as enquetes disponíveis para resposta
+    exibirEnquetes($pdo);
+    ?>
+
+    <h2>Feedbacks Enviados</h2>
+    <?php
+    // Exibe os feedbacks enviados
+    exibirFeedbacks($pdo);
+    ?>
+</body>
+</html>
